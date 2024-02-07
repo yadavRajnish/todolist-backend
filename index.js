@@ -15,9 +15,10 @@ app.listen(PORT, () => {
 
 const connectToDatabase = async () => {
     try {
-        await mongoose.connect("mongodb://localhost:27017/TODO", {
-            // useNewUrlParser: true,
-            // useUnifiedTopology: true,
+        await mongoose.connect("mongodb+srv://palshachin:sachin123@cluster0.4uaoew9.mongodb.net/Todos?retryWrites=true&w=majority", {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+           
         });
         console.log('Connected to MongoDB Atlas');
     } catch (error) {
@@ -26,5 +27,6 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
 
 app.use(todoRouter);

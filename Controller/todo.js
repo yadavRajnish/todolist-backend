@@ -2,7 +2,7 @@ import todoModel from '../Model/model.js';
 
 export const getToDoList = async (req, res) => {
     try {
-        const todoData = await todoModel.find();
+        const todoData = await todoModel.find({});
         res.status(200).json({
             data: todoData,
             message: "Successfully fetched data!",
